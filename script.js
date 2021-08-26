@@ -24,11 +24,19 @@ function updateScore(guess){
 document.querySelector('.check').addEventListener('click', function() {
     const guess = Number(document.querySelector('.guess').value)
 
+    //if there is no input
     if(!guess){
         document.querySelector('.message').textContent = "⛔ No number!"
-    } else if(guess === secretNumber) {
+    } 
+    //if guess is correct
+    else if(guess === secretNumber) {
         document.querySelector('.message').textContent = "🎉 Correct Number!"
-    } else {
+        document.querySelector('body').style.backgroundColor = '#60b347'
+        document.querySelector('.number').style.width = '30rem'
+        document.querySelector('.number').textContent = guess
+    } 
+    //if guess is incorrect
+    else {
         updateScore(guess)
     }
 })
