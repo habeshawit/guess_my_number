@@ -10,6 +10,7 @@ function updateScore(guess){
         document.querySelector('.message').textContent = "💥 You lost the game!"
         score = 0
         document.querySelector('.score').textContent = score
+        document.querySelector('body').style.backgroundColor = '#FF0000'
         return
     }
     if(guess > secretNumber){
@@ -39,4 +40,11 @@ document.querySelector('.check').addEventListener('click', function() {
     else {
         updateScore(guess)
     }
+})
+
+document.querySelector('.again').addEventListener('click', function(){
+    document.querySelector('.message').textContent = "Start guessing..."
+    document.querySelector('.score').textContent = 20
+    document.querySelector('body').style.backgroundColor = '#222'
+    document.querySelector('.guess').value = ''
 })
